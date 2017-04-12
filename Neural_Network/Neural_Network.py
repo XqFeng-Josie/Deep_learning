@@ -33,11 +33,11 @@ class Neural_Network:
     def fit(self,X,y,learning_rate=0.2,epochs=10000 ):
         #确定为最少2维的，然后将数据集转化成numpy矩阵
         X = np.atleast_2d(X)
-        #初始化一个和X行数相同列数加一的矩阵，变量存1，便于对偏向进行赋值
+        #初始化一个和X行数相同列数加一的矩阵，变量存1，便于对预测值进行赋值
         temp = np.ones([X.shape[0],X.shape[1]+1])
-        #取所有行，取第一列到倒数第二列,进行bias的赋值
+        #取所有行，取第一列到倒数第二列,进行数据集的赋值
         temp[:,0:-1]=X
-        #x为矩阵类型且加入了偏向列
+        #x为矩阵类型且加入了预测值列
         X = temp
         # list=>array
         y = np.array(y)
