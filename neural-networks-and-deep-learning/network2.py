@@ -47,7 +47,7 @@ class Network(object):
 #原始初始化权重的方法，即在标准正态分布上随机生成
     def large_weight_initializer(self):
         self.biases  = [np.random.randn(y,1) for y in self.sizes[1:]]
-        self.weights = [np.random.randn(y,x)/np.sqrt(x)
+        self.weights = [np.random.randn(y,x)
                         for x,y in zip(self.sizes[:-1],self.sizes[1:])]
 # a` = η（wa + b） η是sigmod函数（01标准化） η= 1/1+e^(-x)
 # 参数a为输入，向前的神经网络，返回输出
