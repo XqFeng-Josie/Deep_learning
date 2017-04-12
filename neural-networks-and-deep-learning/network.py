@@ -53,7 +53,7 @@ class Network(object):
         nabla_b = [np.zeros(b.shape) for b in self.biases]
         nabla_w = [np.zeros(w.shape) for w in self.weights]
         for x,y in mini_batch:
-            #目标函数的权重和偏向的偏导数(针对每个单独的实例)
+            #目标函数的权重和偏向的误差(针对每个单独的实例)
             delta_nabla_b,delta_nabla_w = self.backprop(x,y)
 
             nabla_b = [nb + dnb for nb,dnb in zip(nabla_b,delta_nabla_b)]
@@ -64,7 +64,7 @@ class Network(object):
         self.biases = [b - (eta / len(mini_batch)) * nb
                        for b, nb in zip(self.biases, nabla_b)]
         #print self.weights[1:100]
-    #返回值:目标函数的权重和偏向的偏导数
+    #返回值:目标函数的权重和偏向的误差
     #偏向的偏导 = 误差
     #权重的偏导 = 误差*权值
     # 参数:self,一个单独的实例
