@@ -140,7 +140,7 @@ class Network(object):
         print ("Best validation accuracy of {0:2%} obtained at iteration {1}"
                .format(best_validation_accuracy,best_iteration))
         print ("Corresponding test accuracy of {0:.2%}".format(test_accuracy))
-
+#卷积层，包含特征提取和特征映射
 #定义卷积运算（convolutional）和池化运算(max_pooling)的类
 class ConvPoolLayer(object):
     #参数：self，卷积图谱，图像大小，池化图谱，激活函数
